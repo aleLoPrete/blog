@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Posts on Ale Lo Prete</title>
-    <link>https://aleloprete.github.io/blog/posts/</link>
-    <description>Recent content in Posts on Ale Lo Prete</description>
+    <title>set-up on Ale Lo Prete</title>
+    <link>https://aleloprete.github.io/blog/tags/set-up/</link>
+    <description>Recent content in set-up on Ale Lo Prete</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Oct 2023 15:40:18 -0400</lastBuildDate><atom:link href="https://aleloprete.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Oct 2023 15:40:18 -0400</lastBuildDate><atom:link href="https://aleloprete.github.io/blog/tags/set-up/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tmux Setup</title>
       <link>https://aleloprete.github.io/blog/posts/tmux-setup/</link>

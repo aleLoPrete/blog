@@ -6,15 +6,16 @@
     <description>Recent content on Ale Lo Prete</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Oct 2023 14:42:49 -0400</lastBuildDate><atom:link href="https://aleloprete.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Oct 2023 15:40:18 -0400</lastBuildDate><atom:link href="https://aleloprete.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tmux Setup</title>
       <link>https://aleloprete.github.io/blog/posts/tmux-setup/</link>
-      <pubDate>Fri, 20 Oct 2023 14:42:49 -0400</pubDate>
+      <pubDate>Thu, 19 Oct 2023 15:40:18 -0400</pubDate>
       
       <guid>https://aleloprete.github.io/blog/posts/tmux-setup/</guid>
-      <description>Placeholder
-from pwn import * </description>
+      <description>Tmux default configuration didn&amp;rsquo;t fit well my workflow.
+This is my tmux configuration:
+tmux prefix # Set prefix to Ctrl unbind C-b set -g prefix C-a The prefix is a combiantion of key that initiate any tmux command. For this reason it must be confortable to type over and over. The first you learn touch typing (writing without looking at the keyboard) is to always keep you hand on the home row.</description>
     </item>
     
   </channel>

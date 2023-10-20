@@ -3,16 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aleloprete.github.io/blog/</loc>
-    <lastmod>2023-10-20T14:42:49-04:00</lastmod>
+    <lastmod>2023-10-19T15:40:18-04:00</lastmod>
   </url><url>
     <loc>https://aleloprete.github.io/blog/posts/</loc>
-    <lastmod>2023-10-20T14:42:49-04:00</lastmod>
+    <lastmod>2023-10-19T15:40:18-04:00</lastmod>
   </url><url>
-    <loc>https://aleloprete.github.io/blog/posts/tmux-setup/</loc>
-    <lastmod>2023-10-20T14:42:49-04:00</lastmod>
+    <loc>https://aleloprete.github.io/blog/tags/productivity/</loc>
+    <lastmod>2023-10-19T15:40:18-04:00</lastmod>
   </url><url>
-    <loc>https://aleloprete.github.io/blog/categories/</loc>
+    <loc>https://aleloprete.github.io/blog/tags/set-up/</loc>
+    <lastmod>2023-10-19T15:40:18-04:00</lastmod>
   </url><url>
     <loc>https://aleloprete.github.io/blog/tags/</loc>
+    <lastmod>2023-10-19T15:40:18-04:00</lastmod>
+  </url><url>
+    <loc>https://aleloprete.github.io/blog/posts/tmux-setup/</loc>
+    <lastmod>2023-10-19T15:40:18-04:00</lastmod>
+  </url><url>
+    <loc>https://aleloprete.github.io/blog/categories/</loc>
   </url>
 </urlset>

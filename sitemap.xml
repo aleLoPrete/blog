@@ -2,17 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://aleloprete.github.io/blog/</loc>
     <lastmod>2023-10-20T14:42:49-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/</loc>
+    <loc>https://aleloprete.github.io/blog/posts/</loc>
     <lastmod>2023-10-20T14:42:49-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/posts/tmux-setup/</loc>
+    <loc>https://aleloprete.github.io/blog/posts/tmux-setup/</loc>
     <lastmod>2023-10-20T14:42:49-04:00</lastmod>
   </url><url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://aleloprete.github.io/blog/categories/</loc>
   </url><url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://aleloprete.github.io/blog/tags/</loc>
   </url>
 </urlset>

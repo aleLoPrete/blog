@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Ale Lo Prete</title>
-    <link>http://example.org/</link>
+    <link>https://aleloprete.github.io/blog/</link>
     <description>Recent content on Ale Lo Prete</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Oct 2023 14:42:49 -0400</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 20 Oct 2023 14:42:49 -0400</lastBuildDate><atom:link href="https://aleloprete.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tmux Setup</title>
-      <link>http://example.org/posts/tmux-setup/</link>
+      <link>https://aleloprete.github.io/blog/posts/tmux-setup/</link>
       <pubDate>Fri, 20 Oct 2023 14:42:49 -0400</pubDate>
       
-      <guid>http://example.org/posts/tmux-setup/</guid>
+      <guid>https://aleloprete.github.io/blog/posts/tmux-setup/</guid>
       <description>Placeholder
 from pwn import * </description>
     </item>

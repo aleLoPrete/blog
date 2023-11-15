@@ -1,6 +1,6 @@
 # My tmux set up
-![tmux 4 panes](tmux-4pane.jpg)
 
+![tmux 4 panes](../img/tmux-4pane.jpg)
 
 Tmux is an awesome terminal multiplexer that make you look like a real hacker. This is my minimal awesome tmux configuration:
 

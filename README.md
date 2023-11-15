@@ -1,1 +1,0 @@
-Blog's public content.

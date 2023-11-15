@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Ale Lo Prete</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <style>
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about.html">About</a></li>
+                <!-- Add links to other pages as needed -->
+            </ul>
+        </nav>
+    </header>
+    <div class="post-content">
+        <h1>My tmux set up</h1>
+<p><img alt="tmux 4 panes" src="tmux-4pane.jpg" /></p>
+<p>Tmux is an awesome terminal multiplexer that make you look like a real hacker. This is my minimal awesome tmux configuration:</p>
+<h2>tmux prefix</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Set prefix to Ctrl</span>
+unbind<span class="w"> </span>C-b
+<span class="nb">set</span><span class="w"> </span>-g<span class="w"> </span>prefix<span class="w"> </span>C-a
+</code></pre></div>
+
+<p>The prefix is a combiantion of key that initiate any tmux command. For this reason it must be confortable to type over and over.
+The first you learn touch typing (writing without looking at the keyboard) is to always keep you hand on the <em>home row</em>. 
+In fact, from this position, specifically with your index fingers on 'f' and 'j' you have the best access to every key.
+That's why on all my setup I always swap the \&lt;Ctrl&gt; and the Caps Lock key.
+Given this premise, it's clear to see why Ctrl-a it's an awesome choice as a tmux prefix.</p>
+<h2>Panes navigation and window-splitting</h2>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Vim-like key bindings for pane navigation (default uses cursor keys).</span>
+unbind<span class="w"> </span>h
+<span class="nb">bind</span><span class="w"> </span>h<span class="w"> </span><span class="k">select</span>-pane<span class="w"> </span>-L
+unbind<span class="w"> </span>j
+<span class="nb">bind</span><span class="w"> </span>j<span class="w"> </span><span class="k">select</span>-pane<span class="w"> </span>-D
+unbind<span class="w"> </span>k
+<span class="nb">bind</span><span class="w"> </span>k<span class="w"> </span><span class="k">select</span>-pane<span class="w"> </span>-U
+unbind<span class="w"> </span>l<span class="w"> </span><span class="c1"># normally used for last-window</span>
+<span class="nb">bind</span><span class="w"> </span>l<span class="w"> </span><span class="k">select</span>-pane<span class="w"> </span>-R
+
+<span class="c1"># Intuitive window-splitting keys.</span>
+<span class="nb">bind</span><span class="w"> </span><span class="o">]</span><span class="w"> </span>split-window<span class="w"> </span>-h<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;#{pane_current_path}&#39;</span><span class="w"> </span><span class="c1"># normally prefix-%</span>
+<span class="nb">bind</span><span class="w"> </span>-<span class="w"> </span>split-window<span class="w"> </span>-v<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;#{pane_current_path}&#39;</span><span class="w"> </span><span class="c1"># normally prefix-&quot;</span>
+</code></pre></div>
+
+<p>Vim <code>hjkl</code> &gt;&gt; every other keybinding.</p>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Escape time for NeoVim</span>
+set-option<span class="w"> </span>-sg<span class="w"> </span>escape-time<span class="w"> </span><span class="m">10</span>
+</code></pre></div>
+
+<p>NeoVim and tmux may go in contrast, this is to make them work smoothless.</p>
+    </div>
+</body>
+</html>
+        

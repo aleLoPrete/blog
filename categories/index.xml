@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on ΔLℙ</title>
-    <link>https://aleloprete.github.io/blog/categories/</link>
+    <link>https://aleloprete.it/categories/</link>
     <description>Recent content in Categories on ΔLℙ</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://aleloprete.github.io/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://aleloprete.it/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

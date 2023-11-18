@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ΔLℙ</title>
+    <link>https://aleloprete.github.io/blog/</link>
+    <description>Recent content on ΔLℙ</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Aug 2022 21:30:04 +0800</lastBuildDate><atom:link href="https://aleloprete.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About me</title>
+      <link>https://aleloprete.github.io/blog/about/</link>
+      <pubDate>Fri, 20 Oct 2023 15:29:23 -0400</pubDate>
+      
+      <guid>https://aleloprete.github.io/blog/about/</guid>
+      <description>Hello! I am Alessandro.
+👹 Beginner CTF player
+🎓 Master&amp;rsquo;s student @PoliMi
+🛰️ Trying to make a satellite go to space @PoliSpace.
+Projects.log 6s CubeSat 12.2022-present
+Team Leader for the Software Subsystem (from 09.2023). Design and testing of the Flight Software for the onboard computer (Nanomind A3200). Design of mission&amp;rsquo;s mode manager. AOCS module integration.
+CyberChallenge 2022
+Participating in CyberChallenge in 2022 allowed me to learn various topics of cybersecurity. I trained in Binary Exploitation, Reverse Engineering, Web Security, and Cryptography through CTF (Capture The Flag) challenges.</description>
+    </item>
+    
+    <item>
+      <title>Tmux Setup</title>
+      <link>https://aleloprete.github.io/blog/posts/tmux-setup/</link>
+      <pubDate>Thu, 19 Oct 2023 15:40:18 -0400</pubDate>
+      
+      <guid>https://aleloprete.github.io/blog/posts/tmux-setup/</guid>
+      <description>How I use tmux Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with pwntools script, I think, can give you a competitive edge when debugging exploits.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,7 +6,34 @@
     <description>Recent content in Tags on ΔLℙ</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 19 Oct 2023 15:40:18 -0400</lastBuildDate><atom:link href="https://aleloprete.it/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 Nov 2023 20:49:55 +0100</lastBuildDate><atom:link href="https://aleloprete.it/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>binary-exploitation</title>
+      <link>https://aleloprete.it/tags/binary-exploitation/</link>
+      <pubDate>Sun, 19 Nov 2023 20:49:55 +0100</pubDate>
+      
+      <guid>https://aleloprete.it/tags/binary-exploitation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CTF</title>
+      <link>https://aleloprete.it/tags/ctf/</link>
+      <pubDate>Sun, 19 Nov 2023 20:49:55 +0100</pubDate>
+      
+      <guid>https://aleloprete.it/tags/ctf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>writeup</title>
+      <link>https://aleloprete.it/tags/writeup/</link>
+      <pubDate>Sun, 19 Nov 2023 20:49:55 +0100</pubDate>
+      
+      <guid>https://aleloprete.it/tags/writeup/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>productivity</title>
       <link>https://aleloprete.it/tags/productivity/</link>
@@ -22,15 +49,6 @@
       <pubDate>Thu, 19 Oct 2023 15:40:18 -0400</pubDate>
       
       <guid>https://aleloprete.it/tags/set-up/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>writeup</title>
-      <link>https://aleloprete.it/tags/writeup/</link>
-      <pubDate>Tue, 19 Oct 2021 12:43:22 +0100</pubDate>
-      
-      <guid>https://aleloprete.it/tags/writeup/</guid>
       <description></description>
     </item>
     

@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aleloprete.it/about/</loc>
-    <lastmod>2023-10-20T15:29:23-04:00</lastmod>
+    <loc>https://aleloprete.it/posts/binary-exploitation-writeup/</loc>
+    <lastmod>2023-11-19T20:49:55+01:00</lastmod>
+  </url><url>
+    <loc>https://aleloprete.it/tags/binary-exploitation/</loc>
+    <lastmod>2023-11-19T20:49:55+01:00</lastmod>
+  </url><url>
+    <loc>https://aleloprete.it/tags/ctf/</loc>
+    <lastmod>2023-11-19T20:49:55+01:00</lastmod>
   </url><url>
     <loc>https://aleloprete.it/posts/</loc>
-    <lastmod>2023-10-19T15:40:18-04:00</lastmod>
+    <lastmod>2023-11-19T20:49:55+01:00</lastmod>
+  </url><url>
+    <loc>https://aleloprete.it/tags/</loc>
+    <lastmod>2023-11-19T20:49:55+01:00</lastmod>
+  </url><url>
+    <loc>https://aleloprete.it/tags/writeup/</loc>
+    <lastmod>2023-11-19T20:49:55+01:00</lastmod>
+  </url><url>
+    <loc>https://aleloprete.it/about/</loc>
+    <lastmod>2023-10-20T15:29:23-04:00</lastmod>
   </url><url>
     <loc>https://aleloprete.it/tags/productivity/</loc>
     <lastmod>2023-10-19T15:40:18-04:00</lastmod>
   </url><url>
     <loc>https://aleloprete.it/tags/set-up/</loc>
-    <lastmod>2023-10-19T15:40:18-04:00</lastmod>
-  </url><url>
-    <loc>https://aleloprete.it/tags/</loc>
     <lastmod>2023-10-19T15:40:18-04:00</lastmod>
   </url><url>
     <loc>https://aleloprete.it/posts/tmux-setup/</loc>
@@ -24,9 +36,6 @@
     <lastmod>2022-08-25T21:30:04+08:00</lastmod>
   </url><url>
     <loc>https://aleloprete.it/posts/hacked/</loc>
-    <lastmod>2021-10-19T12:43:22+01:00</lastmod>
-  </url><url>
-    <loc>https://aleloprete.it/tags/writeup/</loc>
     <lastmod>2021-10-19T12:43:22+01:00</lastmod>
   </url><url>
     <loc>https://aleloprete.it/categories/</loc>

@@ -8,6 +8,18 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Aug 2022 21:30:04 +0800</lastBuildDate><atom:link href="https://aleloprete.it/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>ASLR Exploitation Writeup</title>
+      <link>https://aleloprete.it/posts/binary-exploitation-writeup/</link>
+      <pubDate>Sun, 19 Nov 2023 20:49:55 +0100</pubDate>
+      
+      <guid>https://aleloprete.it/posts/binary-exploitation-writeup/</guid>
+      <description>Since ASLR is active, memory addresses are not consistent
+ The provided program reads two inputs and prints them on stdout. It then continuously rereads the second input and prints both buffers on stdout. Initial analysis If we run checksec:
+This is the decompiled binary from Ghidra:
+undefined8 main(void) { int mmprotect_return; undefined8 uVar1; ssize_t nread; long in_FS_OFFSET; char buffer [104]; long local_10; local_10 = *(long *)(in_FS_OFFSET + 0x28); setvbuf(_stdin,(char *)0x0,2,0); setvbuf(_stdout,(char *)0x0,2,0); puts(&amp;#34;Welcome to Leakers!</description>
+    </item>
+    
+    <item>
       <title>About me</title>
       <link>https://aleloprete.it/about/</link>
       <pubDate>Fri, 20 Oct 2023 15:29:23 -0400</pubDate>

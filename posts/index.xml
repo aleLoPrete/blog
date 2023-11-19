@@ -16,5 +16,16 @@
       <description>How I use tmux Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with pwntools script, I think, can give you a competitive edge when debugging exploits.</description>
     </item>
     
+    <item>
+      <title>H4cked writeup</title>
+      <link>https://aleloprete.it/posts/hacked/</link>
+      <pubDate>Tue, 19 Oct 2021 12:43:22 +0100</pubDate>
+      
+      <guid>https://aleloprete.it/posts/hacked/</guid>
+      <description>H4cked - TryHackMe Room walkthrough [H4cked]https://tryhackme.com/room/h4cked is a beginner room from TryHackMe. We’ll have to apply offensive and defensive concepts to complete the room.
+Oh no! We&amp;rsquo;ve been hacked! We begin by reading that some intruder has found his way into one of our machines, and the .pcapng is our forensic evidence.
+We can start by opening the file in Wireshark to analyze its content. Immediately, we see that the attacker has tried, successfully, to brute force our host through the FTP service on port 21:</description>
+    </item>
+    
   </channel>
 </rss>

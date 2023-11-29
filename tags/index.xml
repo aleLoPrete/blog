@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on ΔLℙ</title>
+    <title>Tags on ALP</title>
     <link>https://aleloprete.it/tags/</link>
-    <description>Recent content in Tags on ΔLℙ</description>
+    <description>Recent content in Tags on ALP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Nov 2023 20:49:55 +0100</lastBuildDate><atom:link href="https://aleloprete.it/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -40,15 +40,6 @@
       <pubDate>Thu, 19 Oct 2023 15:40:18 -0400</pubDate>
       
       <guid>https://aleloprete.it/tags/productivity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>set-up</title>
-      <link>https://aleloprete.it/tags/set-up/</link>
-      <pubDate>Thu, 19 Oct 2023 15:40:18 -0400</pubDate>
-      
-      <guid>https://aleloprete.it/tags/set-up/</guid>
       <description></description>
     </item>
     

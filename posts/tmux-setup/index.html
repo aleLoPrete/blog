@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <meta name="description" content="How I use tmux Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with pwntools script, I think, can give you a competitive edge when debugging exploits.">  
+   <meta name="description" content="Why using tmux Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with pwntools script, I think, can give you a competitive edge when debugging exploits.">  
 
   <title>
     
@@ -16,13 +16,13 @@
   
   
   
-  <link rel="stylesheet" href="/css/main.1203092a8c31a0c6366a55984164f3dd3625bbf59b55f1d0e9c639f977f8276de9db6eb92c0b0f6aff4df1586661a57a41d97cc21bee5bc01252eb660276533f.css" integrity="sha512-EgMJKowxoMY2alWYQWTz3TYlu/WbVfHQ6cY5&#43;Xf4J23p2265LAsPav9N8VhmYaV6Qdl8whvuW8ASUutmAnZTPw==" />
+  <link rel="stylesheet" href="/css/main.d6b63bea9e3991a0210648c988d0cb30ae4fac0bfb1b27ed1f5cfde15d1846f567f9d8b7312e79acde39fd4c43752cb08d8fdf1d6f1878457dc3cd10f8ed0508.css" integrity="sha512-1rY76p45kaAhBkjJiNDLMK5PrAv7GyftH1z94V0YRvVn&#43;di3MS55rN45/UxDdSywjY/fHW8YeEV9w80Q&#43;O0FCA==" />
   
 </head>
 <body a="auto">
-        <main class="page-content" aria-label="Content">
-            <div class="w">
-<a href="/">ΔLℙ</a>
+    <main class="page-content" aria-label="Content">
+        <div class="w">
+<a href="/">&lt;&lt;</a>
 
 
 <article>
@@ -38,7 +38,11 @@
         <aside >
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#how-i-use-tmux">How I use tmux</a></li>
+    <li><a href="#why-using-tmux">Why using tmux</a>
+      <ul>
+        <li><a href="#quick-note-on-the-terminology">Quick note on the terminology:</a></li>
+      </ul>
+    </li>
     <li><a href="#tmux-prefix">tmux prefix</a></li>
     <li><a href="#panes-navigation-and-window-splitting">Panes navigation and window-splitting</a></li>
     <li><a href="#minimal-status-bar">Minimal status bar</a></li>
@@ -49,38 +53,47 @@
     
 
     <p><img src="/img/tmux/tmux-4pane.jpg" alt="tmux 4 panes"></p>
-<h2 id="how-i-use-tmux">How I use tmux</h2>
+<h2 id="why-using-tmux">Why using tmux</h2>
 <p>Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve  CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with <code>pwntools</code> script, I think, can give you a competitive edge when debugging exploits.</p>
+<h3 id="quick-note-on-the-terminology">Quick note on the terminology:</h3>
+<ul>
+<li><strong>session</strong>: the higher level of organization. A collection of one or more windows. You attach/detach from a tmux session from a terminal. Common scenario: you are running tmux on a remote server, and your connection drops; as long as the server is running, once you connect back, you can attach to your previous session without losing any state.</li>
+<li><strong>window</strong>: you can have multiple windows in one tmux session. Similar to tabs.</li>
+<li><strong>pane</strong>: inside a tmux window you can split the terminal into panes. Each pane runs a separated shell.</li>
+</ul>
+<blockquote>
+<p>TLDR; session &gt; window &gt; pane</p>
+</blockquote>
 <h2 id="tmux-prefix">tmux prefix</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Set prefix to Ctrl</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0f0"># Set prefix to Ctrl</span>
 unbind C-b
 set -g prefix C-a
 </code></pre></div><p>The prefix is a combination of keys that initiate any tmux command. For this reason, it must be comfortable and easily reachable.
 When learning touch typing, that is, writing without looking at the keyboard, you first learn to keep your hand on the home row. In the qwerty layout, the home row starts with &lsquo;a&rsquo; and ends with &lsquo;l.&rsquo; In fact, from this position, specifically with your index fingers on &lsquo;f&rsquo; and &lsquo;j,&rsquo; you have the best access to every other key. All this introduction justifies why I always swap the Ctrl and the Caps Lock key on all my setups. Hopefully, this clarifies why Ctrl-a is an excellent choice for a tmux prefix.</p>
 <h2 id="panes-navigation-and-window-splitting">Panes navigation and window-splitting</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Vim-like key bindings for pane navigation (default uses cursor keys).</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0f0"># Vim-like key bindings for pane navigation (default uses cursor keys).</span>
 unbind h
-bind h <span style="color:#66d9ef">select</span>-pane -L
+bind h <span style="color:#f00">select</span>-pane -L
 unbind j
-bind j <span style="color:#66d9ef">select</span>-pane -D
+bind j <span style="color:#f00">select</span>-pane -D
 unbind k
-bind k <span style="color:#66d9ef">select</span>-pane -U
-unbind l <span style="color:#75715e"># normally used for last-window</span>
-bind l <span style="color:#66d9ef">select</span>-pane -R
+bind k <span style="color:#f00">select</span>-pane -U
+unbind l <span style="color:#0f0"># normally used for last-window</span>
+bind l <span style="color:#f00">select</span>-pane -R
 
-<span style="color:#75715e"># Intuitive window-splitting keys.</span>
-bind <span style="color:#f92672">]</span> split-window -h -c <span style="color:#e6db74">&#39;#{pane_current_path}&#39;</span> <span style="color:#75715e"># normally prefix-%</span>
-bind - split-window -v -c <span style="color:#e6db74">&#39;#{pane_current_path}&#39;</span> <span style="color:#75715e"># normally prefix-&#34;</span>
-</code></pre></div><p>Once you learn Vim&rsquo;s core motions, nothing else makes sense.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Escape time for NeoVim</span>
-set-option -sg escape-time <span style="color:#ae81ff">10</span>
+<span style="color:#0f0"># Intuitive window-splitting keys.</span>
+bind ] split-window -h -c <span style="color:#87ceeb">&#39;#{pane_current_path}&#39;</span> <span style="color:#0f0"># normally prefix-%</span>
+bind - split-window -v -c <span style="color:#87ceeb">&#39;#{pane_current_path}&#39;</span> <span style="color:#0f0"># normally prefix-&#34;</span>
+</code></pre></div><p>This keybinding allows you to move around panes easily using vim-like keybindings. Once you learn Vim&rsquo;s core motions, nothing else makes sense.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0f0"># Escape time for NeoVim</span>
+set-option -sg escape-time <span style="color:#f60">10</span>
 </code></pre></div><p>NeoVim and tmux shortcuts may go in contrast; these settings make them work smoothly.</p>
 <h2 id="minimal-status-bar">Minimal status bar</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e"># Plugins</span>
-set -g @plugin <span style="color:#e6db74">&#39;niksingh710/minimal-tmux-status&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0f0"># Plugins</span>
+set -g @plugin <span style="color:#87ceeb">&#39;niksingh710/minimal-tmux-status&#39;</span>
 
-<span style="color:#75715e"># Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)</span>
-run <span style="color:#e6db74">&#39;~/.tmux/plugins/tpm/tpm&#39;</span>
+<span style="color:#0f0"># Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)</span>
+run <span style="color:#87ceeb">&#39;~/.tmux/plugins/tpm/tpm&#39;</span>
 </code></pre></div><p>I only have one plugin to have minimal the status bar.</p>
 <h2 id="daily-set-up">Daily set up</h2>
 <p>My standard setup is:</p>
@@ -91,13 +104,25 @@ run <span style="color:#e6db74">&#39;~/.tmux/plugins/tpm/tpm&#39;</span>
 <p><img src="/img/tmux/tmux-setup1.png" alt="tmux set up 1"></p>
 <p><img src="/img/tmux/tmux-setup2.png" alt="tmux set up 1"></p>
 <p>I easily manage windows with:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;Prefix&gt; + n <span style="color:#f92672">(</span>next<span style="color:#f92672">)</span>
-&lt;Prefix&gt; + c <span style="color:#f92672">(</span>create<span style="color:#f92672">)</span>
-&lt;Prefix&gt; + x <span style="color:#f92672">(</span>kill<span style="color:#f92672">)</span>
-&lt;Prefix&gt; + , <span style="color:#f92672">(</span>rename<span style="color:#f92672">)</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;Prefix&gt; + n (next)
+&lt;Prefix&gt; + c (create)
+&lt;Prefix&gt; + x (kill)
+&lt;Prefix&gt; + , (rename)
 </code></pre></div>
 </article>
 
-            </div>
-        </main>
-    </body></html>
+        </div>
+        <div class="w">
+            <div id="nextprev" style="display: flex; justify-content: space-between; padding: 10px;">
+    <a href="/posts/hacked/">
+        <div id="prevart">
+            &lt;&lt; H4cked writeup </div>
+    </a>
+    <a href="/posts/binary-exploitation-writeup/">
+        <div id="nextart">ASLR Exploitation Writeup >></div>
+    </a>
+    </div>
+
+        </div>
+    </main>
+</body></html>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on ΔLℙ</title>
+    <title>Posts on ALP</title>
     <link>https://aleloprete.it/posts/</link>
-    <description>Recent content in Posts on ΔLℙ</description>
+    <description>Recent content in Posts on ALP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 19 Nov 2023 20:49:55 +0100</lastBuildDate><atom:link href="https://aleloprete.it/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +14,8 @@
       
       <guid>https://aleloprete.it/posts/binary-exploitation-writeup/</guid>
       <description>Since ASLR is active, memory addresses are not consistent
- Initial analysis The provided program reads two inputs and prints them on stdout. Then, it continuously rereads the second input and prints both buffers on stdout.
+ I am learning about binary exploitation. This is the write-up of a challenge about bypassing binary mitigations.
+Initial analysis The provided program reads two inputs and prints them on stdout. Then, it continuously rereads the second input and prints both buffers on stdout.
 If we run checksec:
 This is the decompiled binary from Ghidra:
 undefined8 main(void) { int mmprotect_return; undefined8 uVar1; ssize_t nread; long in_FS_OFFSET; char buffer [104]; long local_10; local_10 = *(long *)(in_FS_OFFSET + 0x28); setvbuf(_stdin,(char *)0x0,2,0); setvbuf(_stdout,(char *)0x0,2,0); puts(&amp;#34;Welcome to Leakers!</description>
@@ -26,7 +27,7 @@ undefined8 main(void) { int mmprotect_return; undefined8 uVar1; ssize_t nread; l
       <pubDate>Thu, 19 Oct 2023 15:40:18 -0400</pubDate>
       
       <guid>https://aleloprete.it/posts/tmux-setup/</guid>
-      <description>How I use tmux Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with pwntools script, I think, can give you a competitive edge when debugging exploits.</description>
+      <description>Why using tmux Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with pwntools script, I think, can give you a competitive edge when debugging exploits.</description>
     </item>
     
     <item>

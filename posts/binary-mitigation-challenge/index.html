@@ -4,14 +4,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
    <meta name="description" content="Since ASLR is active, memory addresses are not consistent
- I am learning about binary exploitation and how to bypass binary mitigation techniques. These are my notes about an exercise I solved.
+ I am learning how to bypass binary exploitation mitigations. These are my notes about an exercise I solved.
 Initial analysis The provided program reads two inputs and prints them on stdout. Then, it continuously rereads the second input and prints both buffers on stdout.
 If we run checksec:
-This is the decompiled binary from Ghidra:">  
+This is the decompiled binary from Ghidra:
+undefined8 main(void) { int mmprotect_return; undefined8 uVar1; ssize_t nread; long in_FS_OFFSET; char buffer [104]; long local_10; local_10 = *(long *)(in_FS_OFFSET &#43; 0x28); setvbuf(_stdin,(char *)0x0,2,0); setvbuf(_stdout,(char *)0x0,2,0); puts(&#34;Welcome to Leakers!">  
 
   <title>
     
-      Binary Exploitation Writeup
+      Binary Mitigation Challenge
     
   </title>
 
@@ -36,7 +37,7 @@ This is the decompiled binary from Ghidra:">
         </time>
     </p>
 
-    <h1>Binary Exploitation Writeup</h1>
+    <h1>Binary Mitigation Challenge</h1>
 
     
         <aside >
@@ -53,7 +54,7 @@ This is the decompiled binary from Ghidra:">
     <blockquote>
 <p>Since ASLR is active, memory addresses are not consistent</p>
 </blockquote>
-<p>I am learning about binary exploitation and how to bypass binary mitigation techniques. These are my notes about an exercise I solved.</p>
+<p>I am learning how to bypass binary exploitation mitigations. These are my notes about an exercise I solved.</p>
 <h2 id="initial-analysis">Initial analysis</h2>
 <p>The provided program reads two inputs and prints them on <code>stdout</code>. Then, it continuously rereads the second input and prints both buffers on stdout.</p>
 <p><img src="/img/aslr-writeup/aslr-writeup-2.png" alt=""></p>

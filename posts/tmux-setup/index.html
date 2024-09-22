@@ -3,7 +3,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <meta name="description" content="Why using tmux Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with pwntools script, I think, can give you a competitive edge when debugging exploits.">  
+   <meta name="description" content="How I use tmux Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with pwntools script, I think, can give you a competitive edge when debugging exploits.">  
 
   <title>
     
@@ -38,11 +38,7 @@
         <aside >
             <nav id="TableOfContents">
   <ul>
-    <li><a href="#why-using-tmux">Why using tmux</a>
-      <ul>
-        <li><a href="#quick-note-on-the-terminology">Quick note on the terminology:</a></li>
-      </ul>
-    </li>
+    <li><a href="#how-i-use-tmux">How I use tmux</a></li>
     <li><a href="#tmux-prefix">tmux prefix</a></li>
     <li><a href="#panes-navigation-and-window-splitting">Panes navigation and window-splitting</a></li>
     <li><a href="#minimal-status-bar">Minimal status bar</a></li>
@@ -53,17 +49,8 @@
     
 
     <p><img src="/img/tmux/tmux-4pane.jpg" alt="tmux 4 panes"></p>
-<h2 id="why-using-tmux">Why using tmux</h2>
+<h2 id="how-i-use-tmux">How I use tmux</h2>
 <p>Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve  CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with <code>pwntools</code> script, I think, can give you a competitive edge when debugging exploits.</p>
-<h3 id="quick-note-on-the-terminology">Quick note on the terminology:</h3>
-<ul>
-<li><strong>session</strong>: the higher level of organization. A collection of one or more windows. You attach/detach from a tmux session from a terminal. Common scenario: you are running tmux on a remote server, and your connection drops; as long as the server is running, once you connect back, you can attach to your previous session without losing any state.</li>
-<li><strong>window</strong>: you can have multiple windows in one tmux session. Similar to tabs.</li>
-<li><strong>pane</strong>: inside a tmux window you can split the terminal into panes. Each pane runs a separated shell.</li>
-</ul>
-<blockquote>
-<p>TLDR; session &gt; window &gt; pane</p>
-</blockquote>
 <h2 id="tmux-prefix">tmux prefix</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0f0"># Set prefix to Ctrl</span>
 unbind C-b
@@ -84,7 +71,7 @@ bind l <span style="color:#f00">select</span>-pane -R
 <span style="color:#0f0"># Intuitive window-splitting keys.</span>
 bind ] split-window -h -c <span style="color:#87ceeb">&#39;#{pane_current_path}&#39;</span> <span style="color:#0f0"># normally prefix-%</span>
 bind - split-window -v -c <span style="color:#87ceeb">&#39;#{pane_current_path}&#39;</span> <span style="color:#0f0"># normally prefix-&#34;</span>
-</code></pre></div><p>This keybinding allows you to move around panes easily using vim-like keybindings. Once you learn Vim&rsquo;s core motions, nothing else makes sense.</p>
+</code></pre></div><p>Once you learn Vim&rsquo;s core motions, nothing else makes sense.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#0f0"># Escape time for NeoVim</span>
 set-option -sg escape-time <span style="color:#f60">10</span>
 </code></pre></div><p>NeoVim and tmux shortcuts may go in contrast; these settings make them work smoothly.</p>
@@ -118,8 +105,8 @@ run <span style="color:#87ceeb">&#39;~/.tmux/plugins/tpm/tpm&#39;</span>
         <div id="prevart">
             &lt;&lt; H4cked writeup </div>
     </a>
-    <a href="/posts/binary-mitigation-challenge/">
-        <div id="nextart">Binary Mitigation Challenge >></div>
+    <a href="/posts/binary-exploitation-writeup/">
+        <div id="nextart">ASLR Exploitation Writeup >></div>
     </a>
     </div>
 

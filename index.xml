@@ -8,14 +8,13 @@
     <language>en-us</language>
     <lastBuildDate>Thu, 25 Aug 2022 21:30:04 +0800</lastBuildDate><atom:link href="https://aleloprete.it/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Binary Mitigation Challenge</title>
-      <link>https://aleloprete.it/posts/binary-mitigation-challenge/</link>
+      <title>ASLR Exploitation Writeup</title>
+      <link>https://aleloprete.it/posts/binary-exploitation-writeup/</link>
       <pubDate>Sun, 19 Nov 2023 20:49:55 +0100</pubDate>
       
-      <guid>https://aleloprete.it/posts/binary-mitigation-challenge/</guid>
+      <guid>https://aleloprete.it/posts/binary-exploitation-writeup/</guid>
       <description>Since ASLR is active, memory addresses are not consistent
- I am learning how to bypass binary exploitation mitigations. These are my notes about an exercise I solved.
-Initial analysis The provided program reads two inputs and prints them on stdout. Then, it continuously rereads the second input and prints both buffers on stdout.
+ Initial analysis The provided program reads two inputs and prints them on stdout. Then, it continuously rereads the second input and prints both buffers on stdout.
 If we run checksec:
 This is the decompiled binary from Ghidra:
 undefined8 main(void) { int mmprotect_return; undefined8 uVar1; ssize_t nread; long in_FS_OFFSET; char buffer [104]; long local_10; local_10 = *(long *)(in_FS_OFFSET + 0x28); setvbuf(_stdin,(char *)0x0,2,0); setvbuf(_stdout,(char *)0x0,2,0); puts(&amp;#34;Welcome to Leakers!</description>
@@ -27,7 +26,7 @@ undefined8 main(void) { int mmprotect_return; undefined8 uVar1; ssize_t nread; l
       <pubDate>Thu, 19 Oct 2023 15:40:18 -0400</pubDate>
       
       <guid>https://aleloprete.it/posts/tmux-setup/</guid>
-      <description>Why using tmux Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with pwntools script, I think, can give you a competitive edge when debugging exploits.</description>
+      <description>How I use tmux Tmux is a terminal multiplexer: it lets you open multiple panes, windows, and sessions seamlessly. I started using it for a neatly organized terminal setup and am perfecting its use while trying to solve CTF challenges. Being efficient in moving from one terminal window to the other is essential for ease of mind. Additionally, exploiting tmux splitting panes functions with pwntools script, I think, can give you a competitive edge when debugging exploits.</description>
     </item>
     
     <item>
@@ -48,9 +47,8 @@ We can start by opening the file in Wireshark to analyze its content. Immediatel
       
       <guid>https://aleloprete.it/about/</guid>
       <description>Hello! I am Alessandro Lo Prete.
- Master&amp;rsquo;s student @PoliMi. Software team leader at @PoliSpace. Beginner CTF player.  I am a cybersecurity enthusiast interested in vulnerability research and exploitation development. I am currently seeking opportunities to apply my growing skillset in the context of aerospace/embedded systems.
-Projects 6s CubeSat 12.2022-present
-I am currently the Team Leader for the Software Subsystem of the 6s CubeSat project. I oversee the entire development process, supporting the team&amp;rsquo;s workflow and coordination.</description>
+tldr;
+ 🕵️️ Love Threat Intelligence 🔎 Learning Malware Analysis 🚀 Ex-intern @European Space Agency 🍁 Looking for internship in Montreal/Canada  Experience Cybersecurity Intern at the European Space Agency Threat research for space communication networks and established a new threat modeling process using the MITRE ATT&amp;amp;CK framework. Enhanced a simulation framework to model attack scenarios and assess anomaly detection techniques on network traffic, and contributed to a Docker-based testbed to automate the deployment of space communication scenarios for network security testing.</description>
     </item>
     
   </channel>

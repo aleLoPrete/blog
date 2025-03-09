@@ -6,7 +6,18 @@
     <description>Recent content in Posts on ALP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 Nov 2023 20:49:55 +0100</lastBuildDate><atom:link href="https://aleloprete.it/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Mar 2025 13:01:39 +0100</lastBuildDate><atom:link href="https://aleloprete.it/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Take My Notes</title>
+      <link>https://aleloprete.it/posts/how-i-take-my-notes/</link>
+      <pubDate>Sun, 09 Mar 2025 13:01:39 +0100</pubDate>
+      
+      <guid>https://aleloprete.it/posts/how-i-take-my-notes/</guid>
+      <description>As an engineering student, I’ve spent the last six years refining how I take notes. I’ve tested countless systems, fallen into productivity rabbit holes, and ultimately landed on a simple, effective philosophy.
+In this post, I&#39; ll go through the principles I apply when taking notes.
+Writing for Understanding Writing is one of the best ways to solidify understanding. As Prof. Feynman teaches, explaining something in your own words forces you to think more deeply and identify gaps in your knowledge.</description>
+    </item>
+    
     <item>
       <title>ASLR Exploitation Writeup</title>
       <link>https://aleloprete.it/posts/binary-exploitation-writeup/</link>

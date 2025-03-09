@@ -57,8 +57,9 @@ We can start by opening the file in Wireshark to analyze its content. Immediatel
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://aleloprete.it/about/</guid>
-      <description>Hello! I am Alessandro Lo Prete.
- 🕵️️ Love Threat Intelligence 🔎 Learning Malware Analysis 🚀 Ex Cybersecurity intern @European Space Agency 🍁 Looking for internship in Montreal/Canada  Work Experience Cybersecurity Intern at the European Space Agency Threat research for space communication networks and established a new threat modeling process using the MITRE ATT&amp;amp;CK framework. Enhanced a simulation framework to model attack scenarios and assess anomaly detection techniques on network traffic, and contributed to a Docker-based testbed to automate the deployment of space communication scenarios for network security testing.</description>
+      <description>Hi! I am Alessandro Lo Prete.
+I am a researcher and engineer passionate about solving complex problems with real-world impact. I have worked with the European Space Agency, first as an intern and currently for my Master’s thesis, strengthening my research and development capabilities in cutting-edge projects.
+My technical interests span malware analysis, compilers, and threat intelligence. I thrive in both independent and collaborative environments, bringing leadership experience and a self-driven mindset.</description>
     </item>
     
   </channel>

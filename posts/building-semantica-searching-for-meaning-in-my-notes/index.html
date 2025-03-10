@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+   <meta name="description" content="I&rsquo;ve recently come across the idea of Retrieval-Augmented Generation (RAG) and wanted to experiment with it. Since I had in my backlog to set up a local LLM, for my notes and documents, I wanted to start implementing the retrieval process to improve the responses of the model I will use.
+It was a fun project to build and it requires just some building blocks. I am also excited about it because there&rsquo;s a lot of improvement to be made and therefore so much to learn.">  
+
+  <title>
+    
+      Building Semantica: Search for Meaning in Markdown
+    
+  </title>
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/" />
+  
+  
+  
+  <link rel="stylesheet" href="/css/main.d6b63bea9e3991a0210648c988d0cb30ae4fac0bfb1b27ed1f5cfde15d1846f567f9d8b7312e79acde39fd4c43752cb08d8fdf1d6f1878457dc3cd10f8ed0508.css" integrity="sha512-1rY76p45kaAhBkjJiNDLMK5PrAv7GyftH1z94V0YRvVn&#43;di3MS55rN45/UxDdSywjY/fHW8YeEV9w80Q&#43;O0FCA==" />
+  
+</head>
+<body a="auto">
+    <main class="page-content" aria-label="Content">
+        <div class="w">
+<a href="/">&lt;&lt;</a>
+
+
+<article>
+    <p class="post-meta">
+        <time datetime="2025-03-10 11:43:47 &#43;0100 CET">
+            2025-03-10
+        </time>
+    </p>
+
+    <h1>Building Semantica: Search for Meaning in Markdown</h1>
+
+    
+
+    <p>I&rsquo;ve recently come across the idea of  <strong>Retrieval-Augmented Generation (RAG)</strong> and wanted to experiment with it. Since I had in my backlog to set up a local LLM, for my notes and documents, I wanted to start implementing the <strong>retrieval process</strong> to improve the responses of the model I will use.</p>
+<p>It was a fun project to build and it requires just some building blocks. I am also excited about it because there&rsquo;s a lot of improvement to be made and therefore so much to learn.</p>
+<p>This is how I have assembled <strong>Semantica</strong>, a <strong>local, FAISS-based search engine</strong> for my markdown notes. It’s still not very fast or efficient but it works great and, most importantly, it is fully local.</p>
+<h2 id="what-is-semantic-search">What is Semantic Search</h2>
+<p>Most search engines utilize keyword-matching at the core of their algorithm. Semantic search on the other hand is a formal (math) way of represent <strong>meaning</strong>. Instead of matching exact words, it looks at <strong>context and intent</strong> to find the most relevant results. It does this by converting text into <strong>vectors</strong> and finding similarities between them. This means you can search with natural language, and get results that make sense, even if they don’t contain the exact words you typed.</p>
+<blockquote>
+<p>This is a very simplistic look at semantics, from the perspective of a software engineer. Semantics is a part of the vast and fascinating field of linguistic.</p>
+</blockquote>
+<h2 id="why-semantic-search">Why Semantic Search</h2>
+<p>I used Obsidian for the last 3 years as a <em>second brain</em> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. This means I  have thousands of notes that span university classes, random ideas, and book notes.</p>
+<p>The built-in fuzzy-search of obsidian is perfect for day-to-day productivity, and well-named notes are the building block of my collection.</p>
+<p>Some notes, though, don&rsquo;t get reviewed for a long time, or got created an never opened again. I loved the idea of being able to carry out a semantic search mainly for two reasons:</p>
+<ul>
+<li>finding something old, of which I forgot the title/the existence</li>
+<li>analysis of the semantic-relationships between notes
+<ul>
+<li>obsidian allow you to see the the links you created between notes but I&rsquo;d love to have an automatic semantic linking of the notes. For personal notes this is not THAT useful, but I think for bigger databases, where you are not the only author, that could be extremely useful to navigate the knowledge-base.</li>
+</ul>
+</li>
+</ul>
+<h2 id="tech-stack--architecture">Tech Stack &amp; Architecture</h2>
+<p>The pipeline is very simple:</p>
+<ol>
+<li><strong>Convert text and pdf into a vector representation</strong></li>
+<li><strong>Build the Index over the vector database</strong></li>
+<li><strong>Perform Similarity Search over the Index</strong></li>
+</ol>
+<p>To achieve this I used:</p>
+<ul>
+<li><strong>FAISS</strong> – Facebook’s vector search library for similarity search</li>
+<li><strong>SentenceTransformers</strong> – To generate the vectorized database</li>
+<li><strong>Rich &amp; Typer</strong> – For a cooler CLI</li>
+</ul>
+<h3 id="indexing-pipeline">Indexing Pipeline</h3>
+<ol>
+<li>Read all <strong>Markdown &amp; PDF</strong> files from a folder</li>
+<li>Extract text (and optionally YAML metadata) - Since <a href="https://Obsidian.md">Obsidian</a> uses YAML frontmatter.</li>
+<li>Convert text to <strong>embeddings</strong> using SentenceTransformers from Hugging Face</li>
+<li>Store embeddings in <strong>FAISS</strong> for efficient nearest-neighbor search</li>
+<li>Save metadata (e.g., filenames, tags) for easy lookup</li>
+</ol>
+<h3 id="search-pipeline">Search Pipeline</h3>
+<ol>
+<li>Load the <strong>FAISS index</strong> and metadata</li>
+<li>Embed the <strong>search query</strong> into the same vector space</li>
+<li>Perform a <strong>nearest-neighbor search</strong></li>
+<li>Return the <strong>top-K most similar notes</strong></li>
+</ol>
+<h3 id="simple-cli">Simple CLI</h3>
+<p>I have built a simple CLI with python&rsquo;s <code>Rich</code> and <code>Typer</code>. They look cool, but they&rsquo;re a bit heavy, although definitely not the bottle-neck on performance.</p>
+<h2 id="next-steps">Next steps</h2>
+<p>This was just the <strong>first step</strong> as my end goal is a <strong>personalized GPT</strong> to explore my own thoughts without having to trust the big corps.</p>
+<p>Next steps:</p>
+<ul>
+<li><strong>Semantic Analysis / Semantic Notes Graph</strong></li>
+<li><strong>Make it a plugin for Obsidian</strong></li>
+<li><strong>Add local GPT</strong></li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>I don&rsquo;t like this expression, but since it is well known in the productivity and note-taking subcultures, I use it to give you an idea of which kind of note-taking system I use. Nonetheless, I think the term Second Brain is bullshit marketing.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+</article>
+
+        </div>
+        <div class="w">
+            <div id="nextprev" style="display: flex; justify-content: space-between; padding: 10px;">
+    <a href="/posts/how-i-take-my-notes/">
+        <div id="prevart">
+            &lt;&lt; How I Take My Notes </div>
+    </a>
+    </div>
+
+        </div>
+    </main>
+</body></html>

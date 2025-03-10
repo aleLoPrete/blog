@@ -6,7 +6,17 @@
     <description>Recent content in Posts on ALP</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Mar 2025 13:01:39 +0100</lastBuildDate><atom:link href="https://aleloprete.it/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 10 Mar 2025 11:43:47 +0100</lastBuildDate><atom:link href="https://aleloprete.it/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Semantica: Search for Meaning in Markdown</title>
+      <link>https://aleloprete.it/posts/building-semantica-searching-for-meaning-in-my-notes/</link>
+      <pubDate>Mon, 10 Mar 2025 11:43:47 +0100</pubDate>
+      
+      <guid>https://aleloprete.it/posts/building-semantica-searching-for-meaning-in-my-notes/</guid>
+      <description>I&amp;rsquo;ve recently come across the idea of Retrieval-Augmented Generation (RAG) and wanted to experiment with it. Since I had in my backlog to set up a local LLM, for my notes and documents, I wanted to start implementing the retrieval process to improve the responses of the model I will use.
+It was a fun project to build and it requires just some building blocks. I am also excited about it because there&amp;rsquo;s a lot of improvement to be made and therefore so much to learn.</description>
+    </item>
+    
     <item>
       <title>How I Take My Notes</title>
       <link>https://aleloprete.it/posts/how-i-take-my-notes/</link>

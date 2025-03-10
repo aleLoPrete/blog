@@ -2,10 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aleloprete.it/posts/how-i-take-my-notes/</loc>
-    <lastmod>2025-03-09T13:01:39+01:00</lastmod>
+    <loc>https://aleloprete.it/posts/building-semantica-searching-for-meaning-in-my-notes/</loc>
+    <lastmod>2025-03-10T11:43:47+01:00</lastmod>
   </url><url>
     <loc>https://aleloprete.it/posts/</loc>
+    <lastmod>2025-03-10T11:43:47+01:00</lastmod>
+  </url><url>
+    <loc>https://aleloprete.it/posts/how-i-take-my-notes/</loc>
     <lastmod>2025-03-09T13:01:39+01:00</lastmod>
   </url><url>
     <loc>https://aleloprete.it/posts/binary-exploitation-writeup/</loc>

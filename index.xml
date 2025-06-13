@@ -68,8 +68,9 @@ We can start by opening the file in Wireshark to analyze its content. Immediatel
       
       <guid>https://aleloprete.it/about/</guid>
       <description>Hi! I am Alessandro Lo Prete.
-I am a researcher and engineer passionate about solving complex problems with real-world impact. I have worked with the European Space Agency, first as an intern and currently for my Master’s thesis, strengthening my research and development capabilities in cutting-edge projects.
-My technical interests span malware analysis, compilers, and threat intelligence. I thrive in both independent and collaborative environments, bringing leadership experience and a self-driven mindset.</description>
+I’m a computer engineer with a strong interest in cybersecurity and software development for complex, real-world systems. I have worked with the European Space Agency, first as an intern and currently for my Master’s thesis.
+I had several experiences in agile teams working across software development, strategic management and IT:
+ I led the Command and Data Handling Software Subsystem for PoliSpace&amp;rsquo;s 6U CubeSat, being responsible for embedded software development and team coordination.</description>
     </item>
     
   </channel>
